@@ -5,6 +5,7 @@ A random game launcher for PS Vita
   <img alt="Image Alt Text" src="https://github.com/jimbob4000/Random-Vita-Game-Launcher/raw/main/Media/livearea.jpg">
 </picture>
 
+<br>
 Spend too long choosing a game to play, or you don't get around to trying new games? Use this app to select and launch a game at random.
 
 
