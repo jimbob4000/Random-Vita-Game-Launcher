@@ -6,6 +6,7 @@ A random game launcher for PS Vita
 </picture>
 
 <br>
+<br>
 Spend too long choosing a game to play, or you don't get around to trying new games? Use this app to select and launch a game at random.
 
 
