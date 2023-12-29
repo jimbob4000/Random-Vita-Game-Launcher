@@ -1,4 +1,4 @@
--- Random Vita Game version 1.0 by jimbob4000
+-- Random Vita Game Launcher: Version 1.0 by jimbob4000
 
 -- More information and credits:
 -- https://github.com/jimbob4000/Random-Vita-Game-Launcher
