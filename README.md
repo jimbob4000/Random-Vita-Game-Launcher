@@ -9,9 +9,9 @@ Spend too long choosing a game to play, or you don't get around to trying new ga
 
 ## What does it do?
 
-When you launch this app it will choose a PS Vita game at random for you to play and start it for you.
+When you launch this app it will choose and start a PS Vita game at random for you to play.
 
-By default only PS Vita games are chosen at random, however you customise the list of games to include in the settings, to add homebrew games, or to remove games you don't want to play.
+By default only Vita games are chosen, however you customise the list of games to include in the settings, to add homebrew games, or to remove games you don't want to play.
 
 ## Installation
 Install the VPK file from the [latest release](https://github.com/jimbob4000/Random-Vita-Game-Launcher/releases) 
