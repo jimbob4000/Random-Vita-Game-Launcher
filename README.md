@@ -24,7 +24,7 @@ By default only PS Vita games are selected at random, this is to prevent unwante
 
 **How to include homebrew games:**
 
-* To include homebrew games in the randomisation, press the settings icon on the livearea screen of the application.
+* Press the settings icon on the livearea screen of the application.
 * You will be presented with a list of games and homebrew apps.
 * Scroll through the list and press 'X' to add or remove a selected game.
 * To save your settings press 'O'.
