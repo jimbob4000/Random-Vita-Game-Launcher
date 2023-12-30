@@ -6,10 +6,10 @@
 
 -- Check settings launch parameter
 
-	setings_mode = 0;
+	settings_mode = 0;
 	args = System.getBootParams()
 	if string.match (args, "settings") then
-		setings_mode = 1
+		settings_mode = 1
 	end
 
 -- Basic setup 
@@ -98,6 +98,7 @@
 -- Load images
 	local btnX = Graphics.loadImage("app0:/DATA/x.png")
     local btnO = Graphics.loadImage("app0:/DATA/o.png")
+    local btnT = Graphics.loadImage("app0:/DATA/t.png")
 
     icon_square = Graphics.loadImage("app0:/DATA/square.png")
 	icon_square_check = Graphics.loadImage("app0:/DATA/square-check.png")
@@ -112,7 +113,7 @@
 
 -- Functions
 
-	if setings_mode == 1 then
+	if settings_mode == 1 then
 
 		-- Load fonts
 		    fontname = "font-SawarabiGothic-Regular.woff"
@@ -244,7 +245,7 @@
 -- Main loop
 while true do
 	
-	if setings_mode == 1 then
+	if settings_mode == 1 then
 
 		-- Game List Browser
 
@@ -258,7 +259,8 @@ while true do
 		    end
 			
 			label1 = Font.getTextWidth(fnt20, "Save and close")
-	        label2 = Font.getTextWidth(fnt20, "Select")
+			label2 = Font.getTextWidth(fnt20, "Reset")
+	        label3 = Font.getTextWidth(fnt20, "Select")
 
 	        Graphics.fillRect(0, 960, 0, 496, dark_purple)--dark background
 
@@ -296,8 +298,13 @@ while true do
 	        Graphics.drawImage(900-label1, 510, btnO)
 	        Font.print(fnt20, 900+28-label1, 508, "Save and close", white)
 
-	        Graphics.drawImage(900-(btnMargin * 2)-label1-label2, 510, btnX)
-	        Font.print(fnt20, 900+28-(btnMargin * 2)-label1-label2, 508, "Select", white)--Select
+	        Graphics.drawImage(900-(btnMargin * 2)-label1-label2, 510, btnT)
+	        Font.print(fnt20, 900+28-(btnMargin * 2)-label1-label2, 508, "Reset", white)--Reset
+
+	        Graphics.drawImage(900-(btnMargin * 4)-label1-label2-label3, 510, btnX)
+	        Font.print(fnt20, 900+28-(btnMargin * 4)-label1-label2-label3, 508, "Select", white)--Select
+
+	        Font.print(fnt20, setting_x, 508, i .. " of " .. #app_table, white)-- Draw total items
 
 	        menuItems = 0
 
@@ -336,11 +343,25 @@ while true do
 
 			    System.exit()
 
+			elseif Controls.check(pad, SCE_CTRL_TRIANGLE) and not Controls.check(oldpad, SCE_CTRL_TRIANGLE) then
+
+				-- Reset to vita titles only
+					for k, v in pairs(app_table) do
+					    if string.match(v.name, "PCS") and not string.match(v.name, "PCSI") then
+				        	app_table[k].include = true
+				        else
+				        	app_table[k].include = false
+				        end
+				    end
 
 			elseif Controls.check(pad, SCE_CTRL_UP) and not Controls.check(oldpad, SCE_CTRL_UP) then
 				i = i - 1
 			elseif Controls.check(pad, SCE_CTRL_DOWN) and not Controls.check(oldpad, SCE_CTRL_DOWN) then
 				i = i + 1
+			elseif Controls.check(pad, SCE_CTRL_LTRIGGER) and not Controls.check(oldpad, SCE_CTRL_LTRIGGER) then
+				i = i - 9
+			elseif Controls.check(pad, SCE_CTRL_RTRIGGER) and not Controls.check(oldpad, SCE_CTRL_RTRIGGER) then
+				i = i + 9
 			else
 			end
 			
