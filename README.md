@@ -29,6 +29,14 @@ By default only PS Vita games are selected at random, this is to prevent unwante
 * Scroll through the list and press 'X' to add or remove a selected game.
 * To save your settings press 'O'.
 
+## Controls in the settings menu
+
+* **DPad** or the **Left Stick**: Move through the list
+* **L/R triggers**: Page up/down
+* **Cross**: Select/unselect a game
+* **Triangle**: Reset the list to include only Vita games
+* **Circle**: Save your selection and close
+
 ## Credits
 
 * Developed with [Lua Player Plus](http://rinnegatamante.github.io/lpp-vita/) by Rinnegatamante.
